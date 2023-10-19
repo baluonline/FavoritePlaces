@@ -6,6 +6,6 @@ export function getFormateDate(date) {
 export function getDateMinusDays(date, days){
   return new Date(today.getFullYear(), today.getMonth(), today.getDate()-days)
   // return date;
-  return date.setDate(date.getDate() - days);
+  // return date.setDate(date.getDate() - days);
 }
 

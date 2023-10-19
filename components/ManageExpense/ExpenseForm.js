@@ -11,6 +11,7 @@ function ExpenseForm({ onCancel, onSubmit, isEditing, defaultValues }) {
     description: defaultValues ? defaultValues.description.toString() : "",
     date: defaultValues ? defaultValues.date.toISOString().slice(0,10) : "",
   }); */
+
   const [inputs, setInputs] = useState({
     amount: {
       value: defaultValues ? defaultValues.amount.toString() : "",
@@ -21,7 +22,9 @@ function ExpenseForm({ onCancel, onSubmit, isEditing, defaultValues }) {
       isValid: !!defaultValues,
     },
     date: {
-      value: defaultValues ? defaultValues.date.toISOString().slice(0, 10) : "",
+      value: defaultValues
+        ? new Date(defaultValues.date).toISOString().slice(0, 10)
+        : "",
       isValid: !!defaultValues,
     },
   });

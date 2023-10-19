@@ -10,7 +10,8 @@ function ExpenseItem({ id, description, date, amount }) {
       expenseId: id,
     });
   }
-  // const formatedDate = getFormateDate(date);
+  const formatedDate = new Date(date).toISOString().slice(0,10)
+  ;
   // console.log(formatedDate);
   return (
     <Pressable
@@ -23,7 +24,7 @@ function ExpenseItem({ id, description, date, amount }) {
           <Text style={[styles.textBase, styles.description]}>
             {description}
           </Text>
-          <Text style={[styles.textBase]}>date</Text>
+          <Text style={[styles.textBase]}>{formatedDate}</Text>
         </View>
         <View style={styles.amountContainer}>
           <Text style={[styles.textBase, styles.amount]}>
